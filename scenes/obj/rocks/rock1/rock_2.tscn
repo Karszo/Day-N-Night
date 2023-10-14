@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://k2weeie3gskq"]
+
+[ext_resource type="Texture2D" uid="uid://crkxmmychmsrf" path="res://main graphica/rock-1.png.png" id="1_t44c4"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ij4by"]
+polygon = PackedVector2Array(-8, -7, -4, -7, -4, -8, 7, -8, 7, -7, 9, -7, 9, -6, 11, -6, 11, -5, 12, -5, 12, -4, 13, -4, 13, -3, 14, -3, 14, -2, 15, -2, 15, -1, 16, -1, 16, 5, 15, 5, 15, 6, 13, 6, 13, 7, 10, 7, 10, 8, 7, 8, 7, 9, 4, 9, 4, 10, -2, 10, -2, 9, -8, 9, -8, 8, -11, 8, -11, 7, -14, 7, -14, 6, -15, 6, -15, 5, -16, 5, -16, 1, -15, 1, -15, -1, -14, -1, -14, -2, -13, -2, -13, -3, -12, -3, -12, -4, -11, -4, -11, -5, -9, -5, -9, -6, -8, -6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbuuk"]
+radius = 8.0
+height = 32.0
+
+[node name="rock2" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 15
+
+[node name="Rock-1_png" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 0)
+texture = ExtResource("1_t44c4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ij4by")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dbuuk")

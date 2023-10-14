@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq5dlwfwxf76m"]
+
+[ext_resource type="Texture2D" uid="uid://cebsl4gb58xmt" path="res://main graphica/house obj/lamp.png.png" id="1_jcsgm"]
+[ext_resource type="Texture2D" uid="uid://6lhw0y54ygon" path="res://graphics/lights/textures/circle.png" id="2_dfgc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehwpm"]
+size = Vector2(21, 36)
+
+[node name="lamp" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 13
+
+[node name="Lamp_png" type="Sprite2D" parent="."]
+texture = ExtResource("1_jcsgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ehwpm")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -3)
+color = Color(1, 0.839216, 0.329412, 1)
+energy = 3.0
+texture = ExtResource("2_dfgc7")

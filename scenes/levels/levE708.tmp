@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0yxwye1ng6q3"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_fws4w"]
+[ext_resource type="PackedScene" uid="uid://dkt3kgj3p3wbs" path="res://scenes/Player/player/Player.tscn" id="1_kbi5q"]
+[ext_resource type="PackedScene" uid="uid://bapcppo31t20b" path="res://scenes/border/border.tscn" id="2_asoce"]
+[ext_resource type="Texture2D" uid="uid://hd806bfkumc7" path="res://graphics/ground/dirt.png" id="3_d1f0u"]
+[ext_resource type="PackedScene" uid="uid://deqsipmioaspn" path="res://scenes/obj/tree/tree.tscn" id="4_nphy3"]
+[ext_resource type="PackedScene" uid="uid://cavtoyignhfdw" path="res://scenes/UI/ui.tscn" id="5_rucqo"]
+[ext_resource type="PackedScene" uid="uid://rac7jqwcdpta" path="res://scenes/ememies/zombie/zombie.tscn" id="6_x2ssv"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_fws4w")
+
+[node name="border" parent="." instance=ExtResource("2_asoce")]
+scale = Vector2(0.970147, 0.853522)
+
+[node name="ground" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ground"]
+texture_repeat = 2
+texture = ExtResource("3_d1f0u")
+region_enabled = true
+region_rect = Rect2(10000, 10000, 10000, 10000)
+
+[node name="darker" type="DirectionalLight2D" parent="ground"]
+energy = 0.0
+blend_mode = 1
+
+[node name="ligher" type="DirectionalLight2D" parent="ground"]
+
+[node name="zombie" parent="." instance=ExtResource("6_x2ssv")]
+position = Vector2(330, -187)
+
+[node name="projectiles" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("1_kbi5q")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.6, 0.6)
+limit_left = -3000
+limit_top = -3000
+limit_right = 3000
+limit_bottom = 3000
+position_smoothing_enabled = true
+
+[node name="tree" parent="." instance=ExtResource("4_nphy3")]
+position = Vector2(495, 111)
+
+[node name="UI" parent="." instance=ExtResource("5_rucqo")]
+
+[connection signal="shoot" from="player" to="." method="_on_player_shoot"]
+[connection signal="leave" from="UI" to="." method="_on_ui_leave"]
+[connection signal="newGame" from="UI" to="." method="_on_ui_new_game"]

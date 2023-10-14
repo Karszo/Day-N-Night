@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bapcppo31t20b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pcapw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7wmyn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ieru"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b7b61"]
+
+[node name="border" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3000)
+rotation = 3.14159
+scale = Vector2(2000, 1)
+shape = SubResource("WorldBoundaryShape2D_pcapw")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3000)
+scale = Vector2(2000, 1)
+shape = SubResource("WorldBoundaryShape2D_7wmyn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(3000, 0)
+rotation = -1.5708
+scale = Vector2(2000, 1)
+skew = 0.000452995
+shape = SubResource("WorldBoundaryShape2D_6ieru")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-3000, 0)
+rotation = 1.5708
+scale = Vector2(2000, 1)
+shape = SubResource("WorldBoundaryShape2D_b7b61")

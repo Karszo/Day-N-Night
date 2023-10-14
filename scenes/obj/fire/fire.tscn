@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd4i2yy8dml2m"]
+
+[ext_resource type="Texture2D" uid="uid://6lhw0y54ygon" path="res://main graphica/circle.png" id="1_qdgam"]
+[ext_resource type="Texture2D" uid="uid://uio37wf1h124" path="res://graphics/ui/campfire.png" id="2_toox0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4r4u"]
+radius = 26.0192
+
+[node name="fire" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 15
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.839216, 0.439216, 0, 1)
+energy = 2.87
+shadow_enabled = true
+texture = ExtResource("1_qdgam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+texture = ExtResource("2_toox0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b4r4u")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+gravity = Vector2(100, -100)
+angular_velocity_max = 160.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color = Color(0.0627451, 0.054902, 0.054902, 1)

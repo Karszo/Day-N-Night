@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy45glbqc4epm"]
+
+[ext_resource type="PackedScene" uid="uid://c8irdaa6dqalk" path="res://scenes/levels/deathScean/death_screan.tscn" id="2_13tli"]
+
+[node name="death" type="Node2D"]
+
+[node name="death screan" parent="." instance=ExtResource("2_13tli")]
+
+[connection signal="leave" from="death screan" to="death screan" method="_on_leave"]
+[connection signal="newGame" from="death screan" to="death screan" method="_on_new_game"]

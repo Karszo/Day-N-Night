@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://yvgfib5xm5bc"]
+
+[ext_resource type="Texture2D" uid="uid://cckpkud80fj3b" path="res://main graphica/house obj/stove.png" id="1_uyegi"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2uaxe"]
+polygon = PackedVector2Array(-17, -16, 16, -16, 16, 10, 13, 10, 13, 12, 12, 12, 12, 13, 9, 13, 9, 11, 8, 11, 8, 10, -17, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o36b"]
+size = Vector2(33, 26)
+
+[node name="stove" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_uyegi")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_2uaxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_3o36b")

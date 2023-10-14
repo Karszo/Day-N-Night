@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhxotymxs1pb2"]
+
+[ext_resource type="Texture2D" uid="uid://chrn20lc6k0bd" path="res://main graphica/rock-3.png.png" id="1_p3pcy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkfcx"]
+radius = 21.095
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vlake"]
+polygon = PackedVector2Array(-21, -7, -21, -11, -20, -11, -20, -12, -19, -12, -19, -13, -17, -13, -17, -14, -16, -14, -15, -14, -15, -15, -13, -15, -13, -16, -10, -16, -10, -16, -10, -17, -7, -17, -7, -18, 7, -18, 8, -18, 8, -17, 9, -17, 9, -16, 11, -16, 11, -15, 11, -15, 12, -15, 12, -14, 13, -14, 13, -13, 14, -13, 14, -12, 15, -12, 15, -11, 15, -10, 16, -10, 16, -9, 17, -9, 17, -8, 18, -8, 18, -6, 19, -6, 19, -5, 20, -5, 20, -4, 21, -4, 21, -3, 21, -2, 22, -2, 22, 1, 23, 1, 23, 10, 22, 10, 22, 11, 21, 11, 21, 12, 20, 12, 20, 13, 19, 13, 19, 14, 18, 14, 18, 15, 15, 15, 15, 16, -16, 16, -16, 15, -17, 15, -17, 13, -18, 13, -18, 11, -19, 11, -19, 9, -20, 9, -20, 8, -21, 8, -21, 7, -22, 7, -22, 4, -23, 4, -23, -3, -22, -3, -22, -7)
+
+[node name="rock1" type="StaticBody2D"]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 15
+
+[node name="Rock-3_png" type="Sprite2D" parent="."]
+position = Vector2(-2, 6)
+texture = ExtResource("1_p3pcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qkfcx")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_vlake")

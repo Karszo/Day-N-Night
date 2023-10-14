@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcnufrndlsi7l"]
+
+[ext_resource type="Texture2D" uid="uid://rnogksgrit43" path="res://main graphica/house obj/tile.png" id="1_josru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akgl1"]
+size = Vector2(64, 64)
+
+[node name="tile" type="Area2D"]
+
+[node name="Tile" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_josru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_akgl1")

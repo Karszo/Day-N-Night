@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhtq10bm1b53i"]
+
+[ext_resource type="Texture2D" uid="uid://c50qyw1ytr0nr" path="res://main graphica/house obj/bed.png" id="1_sxlh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyba"]
+size = Vector2(34, 50)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kfio2"]
+polygon = PackedVector2Array(-18, -21, -17, -21, -17, -22, -16, -22, -16, -23, -15, -23, -15, -24, -14, -24, -14, -23, 14, -23, 14, -24, 15, -24, 15, -23, 16, -23, 16, -22, 17, -22, 17, -21, 18, -21, 18, -20, 17, -20, 17, 26, -17, 26, -17, -20, -18, -20)
+
+[node name="bed" type="StaticBody2D"]
+texture_filter = 1
+collision_layer = 16
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sxlh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_jpyba")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_kfio2")

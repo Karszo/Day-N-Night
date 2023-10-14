@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dovxra0otkw5g"]
+
+[ext_resource type="Texture2D" uid="uid://k6f6d5imr5dn" path="res://main graphica/tree 3.png" id="1_r5ge0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opvwu"]
+radius = 25.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ak63i"]
+polygon = PackedVector2Array(-21, -14, -21, -10, -19, -8, -17, -5, -14, -4, -9, -6, -5, -6, -4, -8, -3, -3, -4, 0, -5, 2, -6, 4, -9, 4, -11, 2, -14, 1, -17, -1, -18, 0, -20, 3, -21, 5, -20, 8, -20, 14, -19, 16, -7, 16, -7, 10, -9, 10, -9, 5, -5, 5, 0, 5, 1, 7, 0, 10, -1, 11, -2, 13, -1, 15, 0, 14, 0, 16, 1, 17, 3, 18, 12, 18, 13, 17, 16, 17, 18, 16, 19, 14, 19, 8, 18, 7, 18, 5, 17, 5, 17, 1, 16, -1, 13, -1, 13, 2, 12, 4, 10, 4, 10, 5, 7, 5, 6, 6, 5, 5, 3, 6, 3, 4, 6, 3, 6, 0, 5, -1, 7, -2, 11, -1, 12, -2, 14, -2, 15, -4, 19, -6, 19, -12, 18, -13, 18, -17, 16, -18, 13, -17, 11, -16, 8, -15, 7, -12, 6, -10, 6, -6, 7, -4, 4, -2, 3, -4, 0, -5, -2, -9, -1, -12, 1, -13, 3, -15, 5, -16, 7, -18, 8, -20, 9, -23, 4, -23, 4, -22, -4, -22, -5, -21, -9, -21, -9, -20, -12, -20, -14, -18, -16, -17, -18, -16, -20, -16, -20, -14)
+
+[node name="tree2" type="StaticBody2D"]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_r5ge0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_opvwu")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ak63i")
+sdf_collision = false
