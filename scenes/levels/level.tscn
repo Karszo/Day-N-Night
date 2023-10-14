@@ -220,6 +220,7 @@ position = Vector2(1491, -2778)
 position = Vector2(1491, -2778)
 
 [node name="fire" type="Node2D" parent="obj"]
+position = Vector2(3, 0)
 
 [node name="fire" parent="obj/fire" instance=ExtResource("6_iige2")]
 position = Vector2(-604, 904)
@@ -385,7 +386,7 @@ position = Vector2(1039, -1301)
 [node name="player" parent="." instance=ExtResource("1_kbi5q")]
 
 [node name="Camera2D2" type="Camera2D" parent="player"]
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(1.75, 1.75)
 limit_left = -2881
 limit_top = -2535
 limit_right = 2881

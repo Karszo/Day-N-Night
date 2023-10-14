@@ -5,3 +5,11 @@
 [node name="menu" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_ww1j2")]
+
+[node name="Camera2D2" type="Camera2D" parent="CanvasLayer"]
+zoom = Vector2(1.25, 1.25)
+limit_left = -2881
+limit_top = -2535
+limit_right = 2881
+limit_bottom = 2535
+position_smoothing_enabled = true
